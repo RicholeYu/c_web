@@ -48,9 +48,13 @@ module.exports = {
                 test: /\.js|ts|tsx$/,
                 use: ["babel-loader"]
             },
+            // {
+            //     test: /\.ejs$/,
+            //     loader: "ejs-loader"
+            // },
             {
-                test: /\.ejs$/,
-                loader: "ejs-loader"
+                test: /\.tpl\.html$/,
+                loader: "html-loader"
             },
             {
                 test: /\.less|css$/,

@@ -1,0 +1,20 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <%= require("@/header.template") %>
+    <div class="page">
+        <%= require("pages/index.template")() %>
+        <%= require("pages/about/about.template")() %>
+        <%= require("pages/news/news.template")() %>
+        <%= require("pages/platform/platform.template")() %>
+        <%= require("pages/product/product.template")() %>
+        <%= require("pages/solution/solution.template")() %>
+    </div>
+    <%= require("@/footer.template")() %>
+</body>
+</html>

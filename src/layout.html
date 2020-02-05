@@ -6,15 +6,15 @@
     <title>Document</title>
 </head>
 <body>
-    <%= require("@/header.ejs")() %>
+    <%= require("@/header.tpl.html") %>
     <div class="page">
-        <%= require("pages/index.ejs")() %>
-        <%= require("pages/about/about.ejs")() %>
-        <%= require("pages/news/news.ejs")() %>
-        <%= require("pages/platform/platform.ejs")() %>
-        <%= require("pages/product/product.ejs")() %>
-        <%= require("pages/solution/solution.ejs")() %>
+        <%= require("pages/index.tpl.html") %>
+        <%= require("pages/about/about.tpl.html") %>
+        <%= require("pages/news/news.tpl.html") %>
+        <%= require("pages/platform/platform.tpl.html") %>
+        <%= require("pages/product/product.tpl.html") %>
+        <%= require("pages/solution/solution.tpl.html") %>
     </div>
-    <%= require("@/footer.ejs")() %>
+    <%= require("@/footer.tpl.html") %>
 </body>
 </html>
