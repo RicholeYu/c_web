@@ -35,7 +35,8 @@ module.exports = {
         }
     },
     resolve: {
-        extensions: [".js", ".ejs"],
+        // extensions: [".js", ".ejs"],
+        extensions: [".js"],
         alias: {
             "styles": resolve("src/styles"),
             "pages": resolve("src/pages"),
@@ -69,7 +70,7 @@ module.exports = {
                             }
                         }
                     },
-                    "postcss-loader"
+                    // "postcss-loader"
                 ]
             },
             {
@@ -137,6 +138,10 @@ module.exports = {
                 NODE_ENV: mode,
                 isProduction
             }
+        }),
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery"
         })
     ].filter(item => !!item)
 }
