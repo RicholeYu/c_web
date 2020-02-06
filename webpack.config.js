@@ -6,6 +6,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin")
 const copyWebpackPlugin = require("copy-webpack-plugin")
+const friendlyErrorsWebpackPlugin =  require("friendly-errors-webpack-plugin")
 const isProduction = process.env.NODE_ENV === "production"
 const mode = isProduction ? "production" : "development"
 const resolve = pathname => path.resolve(__dirname, pathname)
@@ -32,6 +33,9 @@ module.exports = {
         quiet: true,
         after () {
             opn(`http://${address.ip()}:${port}`)
+        },
+        overlay: {
+            errors: true
         }
     },
     resolve: {
@@ -46,7 +50,16 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js|ts|tsx$/,
+                enforce: "pre",
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: "eslint-loader",
+                options: {
+                    failOnError: true
+                }
+            },
+            {
+                test: /\.js$/,
                 use: ["babel-loader"]
             },
             // {
@@ -69,7 +82,7 @@ module.exports = {
                                 "@vw": "100 / 750vw"
                             }
                         }
-                    },
+                    }
                     // "postcss-loader"
                 ]
             },
@@ -109,6 +122,7 @@ module.exports = {
         ]
     },
     plugins: [
+        !isProduction && new friendlyErrorsWebpackPlugin(),
         isProduction && new copyWebpackPlugin([
             {
                 from: resolve("static"),
