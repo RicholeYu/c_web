@@ -28,6 +28,7 @@ body.product_smartscore .page-product_smartscore {
 
 body {
     font-size: 12px;
+    font-family: HelveticaNeue-Medium;
 }
 .color-primary {
     color: #fcd000;
@@ -52,6 +53,9 @@ a, a:focus, a:hover {
 }
 .vertical-middle {
     vertical-align: middle;
+}
+.full-width {
+    width: 100%;
 }
 
 .no-padding {
@@ -104,7 +108,9 @@ section {
     margin-right: 30px;
 }
 .navbar-brand img {
-    height: 50px;
+    height: 42px;
+    position: relative;
+    top: 4px;
 }
 .nav-justified > li {
     line-height: 30px;
@@ -126,13 +132,12 @@ section {
     font-size: 12px;
 }
 .swiper-container {
-    height: 400px;
+    height: 480px;
 }
 .swiper-slide {
     color: #fff;
-    background-image: url('/image/banner.jpg');
-    background-size: 100%;
-    background-position: left top;
+    background-image: url('/image/banner_home.png');
+    background-size: cover;
 }
 .swiper-bullet {
     width: 24px;
@@ -153,77 +158,142 @@ section {
     margin-bottom: 100px;
     background-color: #383a36;
     color: #fff;
-    /* background-image: url(); */
-}
-.dl-container .title {
-    margin-bottom: 5px;
+    background-image: url('/image/homerbanner_foot.png');
+    .title {
+        margin-bottom: 5px;
+        font-size: 22px;
+        font-weight: normal;
+    }
+    small {
+        opacity: 0.7;
+    }
 }
 .dl-ul >li {
     margin: 0 50px;
 }
 .row-ct {
     margin-top: 50px;
-}
-.science-banner {
-    width: 90%;
-    margin: 0 auto;
-    /* background-image: url(); */
-}
-.science-art-ct .thumbnail img {
-    height: 360px;
-}
-.media {
-    height: 70px;
-    padding: 10px;
-    border: solid 1px #f5d954;
-    background-color: #fffffb;
-    border-radius: 2px;
-}
-.media:hover{
-    background-color: #fff9e1;
-    /* background-image: url('/image/media-bg.png'); */
-    background-size: 100%;
-}
-.media-object {
-    width: 40px;
+    height: 480px;
 }
 .science-art-ct {
     padding: 30px 0;
     li {
         margin-bottom: 30px;
     }
-}
-.solution-ct {
-    background-color: #000;
-    color: #fff;
-    padding: 30px 0;
-    /* background-image: url(); */
-    .media-body {
-        color: #333;
+    .science-li {
+        width: 240px;
+        height: 96px;
+        padding: 3px;
+        border-radius: 2px;
+        &:hover {
+            border: none;
+            cursor: pointer;
+            background-image: url('/image/science_selected.png');
+        }
+        .flex {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100%;
+            border: solid 1px #ffcb79;
+            .li-left {
+                margin: 0 15px;
+            }
+            .heading {
+                font-size: 16px;
+                margin-top: 0;
+            }
+        }
+    }
+    .science-banner-ct {
+        position: relative;
+        height: 100%;
+        .science-banner {
+            width: 100%;
+            border: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
     }
 }
-.solution-ct-left .media {
-    height: 90px;
+
+.media-object {
+    width: 40px;
+}
+
+.solution-ct {
+    height: 480px;
+    color: #fff;
+    padding: 30px 0;
+    background-color: #000;
+    background-image: url('/image/banner_solution.png');
+    background-size: 100%;
+}
+.solution-ct-left .li-flex {
+    height: 96px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.47);
+    .media-object {
+        display: none;
+    }
+    .media-object.active {
+        display: block;
+    }
+    &.active {
+        background-color: transparent;
+        background-image: url('/image/solution_selected.png');
+        background-size: 100%;
+        transform: scale(1.03) translateX(4px);
+        color: #333;
+        .media-object {
+            display: block;
+        }
+        .media-object.active {
+            display: none;
+        }
+    }
+    .li-left {
+        margin: 0 15px;
+    }
 }
 .solution-ct-right {
-    height: 200px;
+    height: 288px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     background-color: #fff;
+    color: #333;
     border-radius: 2px;
     padding: 30px;
+    display: none;
+    &.active {
+        display: block;
+    }
+    .bank-img {
+        background: #FFFFFF;
+        box-shadow: 0 0 4px 2px rgba(201,201,201,0.50);
+        border-radius: 2px;
+    }
     img {
         width: 120px;
         height: 50px;
-        box-shadow: 0 0 4px #999;
     }
 }
-.xindai-btn-detail:focus, .xindai-btn-detail:hover {
-    color: #fff;
+.xindai-btn-detail {
+    width: 110px;
+    height: 27px;
+    display: inline-block;
+    padding: 4px 5px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    background-image: url('/image/btn_detail.png');
 }
 .partner-ct {
-    min-height: 400px;
+    height: 400px;
     position: relative;
     .statistical-ct{
         width: 100%;
@@ -234,27 +304,45 @@ section {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        > div {
+            margin-bottom: 30px;
+        }
         .statist-sonct{
-            width: 80%;
-            /* background-image: url(); */
-            background-color: grey;
+            width: 170px;
+            height: 145px;
+            margin: 0 auto;
             color: #fff;
-            opacity: 0.5;
             text-align: center;
-            padding: 20px;
             border-radius: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-size: cover;
+            &.bigfinancial {
+                background-image: url('/image/bigfinancial.png');
+            }
+            &.smallloans {
+                background-image: url('/image/smallloans.png');
+            }
+            &.logistics {
+                background-image: url('/image/logistics.png');
+            }
         }
     }
 }
 .partner-img-ct {
     width: 100%;
     height: 100%;
-    /* background-image: url(); */
+    background-image: url('/image/partners.png');
+    background-size: cover;
 }
 .trial-entry-ct {
     height: 80px;
-    background-color: lightseagreen;
-    /* background-image: url(); */
+    background-image: url('/image/banner_trial.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 .trial-link {
     border: solid 1px #fff;
@@ -262,7 +350,32 @@ section {
     border-radius: 2px;
     margin-left: 15px;
 }
-
+@media screen and (max-width: 768px) {
+    .swiper-container h2 {
+        font-size: 22px;
+    }
+    .dl-ul > li {
+        margin: 0;
+    }
+    .science-art-ct {
+        padding: 0;
+        .science-banner-ct, .science-banner img {
+            height: 334px;
+        }
+    }
+    .row-ct {
+        width: 100%;
+        margin: 0 auto;
+        height: auto;
+        min-height: 480px;
+        ul.list-unstyled {
+            li {
+                display: inline-block;
+                margin: 5px 0px 5px 90px;
+            }
+        }
+    }
+}
 
 /* smartscore */
 .smart-score-container {

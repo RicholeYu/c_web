@@ -43,7 +43,7 @@ module.exports = {
         "keyword-spacing": [2, { "before": true, "after": true }],
         "space-before-blocks": [2, "always"],
         "spaced-comment": [2, "always", {"exceptions": ['-', '+']}],
-        "quotes": [2, "single"],
+        "quotes": [2, "double"],
         "semi": [2, "never"],
         "no-multiple-empty-lines": [2, {"max": 1}],
         "generator-star-spacing": [2, { "before": true, "after": true }],
@@ -62,6 +62,7 @@ module.exports = {
         "window": true,
         "document": true,
         "location": true,
-        "$": true
+        "$": true,
+        "Swiper": true
     }
 }
