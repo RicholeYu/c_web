@@ -171,7 +171,7 @@ section {
 .dl-ul >li {
     margin: 0 50px;
 }
-.row-ct {
+.section-sonct {
     margin-top: 50px;
     height: 480px;
 }
@@ -273,13 +273,15 @@ section {
     &.active {
         display: block;
     }
+    .bank-img-ct {
+        margin-bottom: 30px;
+    }
     .bank-img {
         background: #FFFFFF;
         box-shadow: 0 0 4px 2px rgba(201,201,201,0.50);
         border-radius: 2px;
     }
     img {
-        width: 120px;
         height: 50px;
     }
 }
@@ -352,10 +354,13 @@ section {
 }
 @media screen and (max-width: 768px) {
     .swiper-container h2 {
-        font-size: 22px;
+        font-size: 20px;
     }
     .dl-ul > li {
         margin: 0;
+    }
+    .dl-container .title {
+        font-size: 18px;
     }
     .science-art-ct {
         padding: 0;
@@ -363,7 +368,10 @@ section {
             height: 334px;
         }
     }
-    .row-ct {
+    .science-li {
+        margin: 5px 0px 5px 90px;
+    }
+    .section-sonct {
         width: 100%;
         margin: 0 auto;
         height: auto;
@@ -371,12 +379,60 @@ section {
         ul.list-unstyled {
             li {
                 display: inline-block;
-                margin: 5px 0px 5px 90px;
             }
         }
     }
+    .solution-ct {
+        height: auto;
+        .section-sonct {
+            margin-top: 20px;
+            .col-md-4 {
+                padding-right: 0;
+            }
+        }
+        .solution-ct-right {
+            height: auto;
+        }
+        ul.list-unstyled.solution-ct-left {
+            width: 100%;
+            li {
+                width: 100%;
+                margin: 0;
+            }
+            .li-flex {
+                flex-direction: column;
+                justify-content: space-evenly;
+                &.active {
+                    background-image: none;
+                    background-color: #fcd000;
+                    transform: scale(1.0);
+                }
+            }
+        }
+    }
+    .partner-ct {
+        height: auto;
+        .partner-img-ct {
+            background-size: 100%;
+        }
+    }
+    .footer-container {
+        .footer-content-ct {
+            ul.list-unstyled li:not(.title){
+                display: inline-block;
+                margin: 8px;
+            }
+        }
+        span.copyright {
+            margin-top: 10px;
+        }
+    }
 }
-
+@media screen and (min-width: 320px) and (max-width: 375px) {
+    .science-li {
+        margin: 5px 0px 5px 50px;
+    }
+}
 /* smartscore */
 .smart-score-container {
     section {
