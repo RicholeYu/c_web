@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>决策树</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="智能决策引擎" transform="translate(-405.000000, -923.000000)">
+            <g id="决策树" transform="translate(356.000000, 889.000000)">
+                <g transform="translate(49.000000, 34.000000)">
+                    <rect id="矩形" fill="#000000" fill-rule="nonzero" opacity="0" x="1" y="1" width="30" height="30"></rect>
+                    <polygon id="路径-4" fill="#FFE462" points="19.8056641 6.20019531 19.1479492 10.1245117 22.5083008 17.4282227 25.6738281 16.5888672"></polygon>
+                    <polygon id="路径" fill="#FE9B01" fill-rule="nonzero" points="22.7558594 18.0976562 22.3984375 16.8115234 25.2080078 16.0322266 19.8056641 6.20019531 19.1435547 10.3017578 17.8251953 10.0878906 19.1054688 2.15136719 27.1914062 16.8671875"></polygon>
+                    <path d="M15.3085937,3.33203125 L3.36132812,24.6542969 L11.7167969,29.8457031 L27.6601562,24.8125 L15.3085937,3.33203125 Z M15.7011719,6.6953125 L25.6738281,24.0390625 L12.6220703,28.1611328 L15.7011719,6.6953125 Z M14.1455078,8.13964844 L11.2949219,28.0117188 L5.15136719,24.1943359 L14.1455078,8.13964844 L14.1455078,8.13964844 Z" id="形状" fill="#FE9B01" fill-rule="nonzero"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -285,7 +285,7 @@ section {
         height: 50px;
     }
 }
-.xindai-btn-detail {
+.btn-detail {
     width: 110px;
     height: 27px;
     display: inline-block;
@@ -433,39 +433,31 @@ section {
         margin: 5px 0px 5px 50px;
     }
 }
-/* smartscore */
-.smart-score-container {
+.product-container {
     section {
         padding: 50px 0;
     }
     .jumbotron {
         color: #fff;
-        height: 280px;
-        background-image: url('/image/banner2.jpg');
+        height: 330px;
+        background-image: url('/image/banner_score.png');
     }
 }
-.apply-smartscore-link {
-    width: 180px;
-    height: 32px;
-    background-color: #f5d954;
-    padding: 3px 8px;
-    /* background-image: url(); */
-}
+/* smartscore */
 .section-feature {
     background-color: #f7f8fa;
 }
 .score-type-li {
-    height: 44px;
-    line-height: 44px;
+    height: 60px;
+    line-height: 60px;
     margin-bottom: 20px;
     background-color: #f8f5d4;
-    border-top-right-radius: 18px;
-    border-bottom-right-radius: 18px;
-    /* background-image: url(); */
+    border-radius: 0 30px 30px 0;
+    background-image: url('/image/scoretype_banner.png');
     .type-title {
         display: inline-block;
-        padding: 0 20px;
-        background-color: #f1bd22;
+        width: 200px;
+        text-align: center;
     }
     .type-desc {
         padding-left: 30px;
@@ -483,13 +475,33 @@ section {
         height: 150px;
         padding: 20px 30px;
         background-color: #fff;
-        box-shadow: 0px 0px 3px #bbb7b7;
+        box-shadow: 0 2px 4px 0 rgba(212,210,210,0.50);
+        border-radius: 2px;
+    }
+    h5 {
+        color: #000;
+        img {
+            margin-right: 10px;
+        }
     }
 }
-.score-advantage-ct, .engine-advantage-ct {
-    background-color: #19212c;
+.product-feature-imgct img {
+    width: 100%;
+}
+.score-advantage-ct, .engine-advantage-ct  {
+    background-image: url('/image/socreadvantage_banner.png');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+// .engine-advantage-ct {
+//     background-image: url('/image/engineadvantage_banner.png');
+//     background-position: bottom;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+// }
+.product-advantage-ct {
     color: #fff;
-    /* background-image: url(); */
     section{
         width: 100%;
         max-width: 900px;
@@ -497,67 +509,112 @@ section {
     }
     .advantage-li {
         width: 100%;
-        max-width: 800px;
+        max-width: 830px;
         margin: 0 auto;
-        height: 60px;
-        line-height: 60px;
+        height: 85px;
+        line-height: 85px;
         text-align: left;
         margin-bottom: 30px;
         border-radius: 2px;
         font-size: 12px;
-        background-color: transparent;
-        box-shadow: 0 0 6px inset #fcd000;
+        background-image: url('/image/advatange-tag_banner.png');
         .li-left {
             display: inline-block;
-            width: 130px;
+            width: 184px;
             height: 100%;
-            padding: 0 15px;
+            text-align: center;
             img {
                 height: 40px;
+                margin-right: 15px;
             }
         }
         .li-right {
             padding-left: 20px;
+            font-size: 12px;
         }
     }
 }
 .score-application-ct .thumbnail, 
 .engine-application-ct .thumbnail {
     position: relative;
-    height: 250px;
+    border: none;
     img{
-        width: 100%;
-        height: 150px;
+        width: 286px;
+        height: 256px;
+        margin: 0;
+    }
+    .caption {
+        position: relative;
+        height: 90px;
     }
     .caption-title{
         position: absolute;
-        top: 115px;
+        bottom: 90px;
         left: 15px;
         font-size: 16px;
-        color: #333;
+        color: #fff;
+        font-weight: normal;
     }
 }
-.score-case-ct,
-.engine-case-ct {
+.product-case-imgct {
+    margin-bottom: 30px;
+}
+.product-case-ct {
     background-color: #f6f7f9;
     .case-li {
-        width: 158px;
         text-align: center;
         margin-bottom: 40px;
         .small{
             height: 24px;
+            line-height: 24px;
+            label {
+                display: inline-block;
+                width: 36px;
+                margin-bottom: 0;
+            }
+            span {
+                display: inline-block;
+                width: 40px;
+                text-align: left;
+                &.long {
+                    width: 60px;
+                }
+            }
         }
         .img-block {
-            width: 100%;
-            height: 90px;
-            background-color: #383a36;
+            width: 181px;
+            height: 115px;
             color: #fff;
-            border-radius: 50px;
             padding: 5px 0;
-            /* background-image: url(); */
+            background-image: url('/image/case_banner.png');
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            .title {
+                font-size: 16px;
+                font-weight: normal;
+            }
             p {
                 margin-top: 10px;
             }
+        }
+        .descend-bar {
+            width: 38px;
+            height: 10px;
+            opacity: 0.8;
+            margin-right: 20px;
+            display: inline-block;
+            background-image: linear-gradient(270deg, #FFEA98 0%, #FCD000 89%);
+            border-radius: 6px;
+        }
+        .rise-bar {
+            width: 58px;
+            height: 10px;
+            display: inline-block;
+            opacity: 0.8;
+            background-image: linear-gradient(270deg, #FFEA98 0%, #FCD000 89%);
+            border-radius: 6px;
         }
     }
 
@@ -566,12 +623,7 @@ section {
 /* smartengine */
 .smart-engine-container {
     .jumbotron {
-        color: #fff;
-        height: 280px;
-        background-image: url('/image/banner2.jpg');
-    }
-    section {
-        padding: 50px 0;
+        background-image: url('/image/smartengine_banner.png');
     }
 }
 

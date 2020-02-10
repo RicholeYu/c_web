@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>通用性</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="智能决策引擎" transform="translate(-562.000000, -2299.000000)" fill-rule="nonzero">
+            <g id="优势" transform="translate(1.000000, 1568.000000)">
+                <g id="通用" transform="translate(538.000000, 700.000000)">
+                    <g id="通用性" transform="translate(23.000000, 31.000000)">
+                        <rect id="矩形" fill="#000000" opacity="0" x="0" y="0" width="22" height="22"></rect>
+                        <path d="M19.25,19.9375 L2.75,19.9375 C1.65,19.9375 0.6875,18.975 0.6875,17.875 L0.6875,4.125 C0.6875,3.025 1.65,2.0625 2.75,2.0625 L9.4875,2.0625 L11.9625,5.225 L19.25,5.225 C20.35,5.225 21.3125,6.1875 21.3125,7.2875 L21.3125,17.875 C21.3125,18.975 20.35,19.9375 19.25,19.9375 Z M2.75,3.4375 C2.3375,3.4375 2.0625,3.7125 2.0625,4.125 L2.0625,17.875 C2.0625,18.2875 2.3375,18.5625 2.75,18.5625 L19.25,18.5625 C19.6625,18.5625 19.9375,18.2875 19.9375,17.875 L19.9375,7.2875 C19.9375,6.875 19.6625,6.6 19.25,6.6 L11.275,6.6 L8.8,3.4375 L2.75,3.4375 Z" id="形状" fill="#FFB302"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
