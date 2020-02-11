@@ -7,6 +7,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin")
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin")
 const copyWebpackPlugin = require("copy-webpack-plugin")
 const friendlyErrorsWebpackPlugin =  require("friendly-errors-webpack-plugin")
+const routes = require("./routes")
 const isProduction = process.env.NODE_ENV === "production"
 const mode = isProduction ? "production" : "development"
 const resolve = pathname => path.resolve(__dirname, pathname)
@@ -130,20 +131,28 @@ module.exports = {
             }
         ]),
         new CleanWebpackPlugin(),
-        new HtmlWebpackPlugin({
-            template: resolve("src/layout.html"),
-            filename: "index.html",
-            chunks: ["app", "vendor.node_module", "runtime.app"],
-            base: "/",
-            name: "app",
-            minify: {
-                collapseWhitespace: true,
-                removeComments: true,
-                removeRedundantAttributes: true,
-                removeScriptTypeAttributes: true,
-                removeStyleLinkTypeAttributes: true,
-                useShortDoctype: true
-            }
+        ...routes.map(route => {
+            let pathname = path.dirname(route.path).replace(resolve("src/pages"), "")
+            let pageClass = pathname.replace("/", "") || "index"
+            return (
+                new HtmlWebpackPlugin({
+                    template: resolve("src/layout.html"),
+                    filename: `.${pathname}/index.html`,
+                    pageClass,
+                    file: route.file,
+                    chunks: ["app", "vendor.node_module", "runtime.app"],
+                    base: "/",
+                    name: "app",
+                    minify: {
+                        collapseWhitespace: true,
+                        removeComments: true,
+                        removeRedundantAttributes: true,
+                        removeScriptTypeAttributes: true,
+                        removeStyleLinkTypeAttributes: true,
+                        useShortDoctype: true
+                    }
+                })
+            )
         }),
         new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin(),

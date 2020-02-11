@@ -3,28 +3,13 @@
     margin: 0;
 }
 
-.page-index,
-.page-about,
-.page-news,
-.page-platform,
-.page-product,
-.page-solution,
-.page-product_decisionengine,
-.page-product_smartscore {
-    display: none;
+body {
+    display: block !important;
 }
 
-body.index .page-index,
-body.about .page-about,
-body.news .page-news,
-body.platform .page-platform,
-body.product .page-product,
-body.solution .page-solution,
-body.product_decisionengine .page-product_decisionengine,
-body.product_smartscore .page-product_smartscore {
-    display: block;
+.page {
+    margin-top: 52px;
 }
-
 
 body {
     font-size: 12px;
@@ -118,6 +103,20 @@ section {
 .nav>li>a:focus, .nav>li>a:hover {
     background-color: transparent;
 }
+body {
+    &.index .index-tab,
+    &.product .product-tab,
+    &.solution .solution-tab,
+    &.platform .platform-tab,
+    &.news .news-tab,
+    &.about .about-tab {
+        border-bottom: solid 2px #fcd000;
+        a {
+            color: #fcd000;
+        }
+    }
+}
+
 .navbar li.active {
     border-bottom: solid 2px #fcd000;
 }
@@ -534,7 +533,7 @@ section {
         }
     }
 }
-.score-application-ct .thumbnail, 
+.score-application-ct .thumbnail,
 .engine-application-ct .thumbnail {
     position: relative;
     border: none;

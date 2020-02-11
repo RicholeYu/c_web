@@ -10,18 +10,10 @@
     <script src="/swiper/swiper.min.js" type="text/javascript"></script>
     <script src="/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 </head>
-<body>
+<body class="<%= htmlWebpackPlugin.options.pageClass %>" style="display: none;">
     <%= require("@/header.tpl.html") %>
     <div class="page">
-        <%= require("pages/index.tpl.html") %>
-        <%= require("pages/about/about.tpl.html") %>
-        <%= require("pages/news/news.tpl.html") %>
-        <%= require("pages/platform/platform.tpl.html") %>
-        <%= require("pages/product/product.tpl.html") %>
-        <%= require("pages/product/product_decisionengine.tpl.html") %>
-        <%= require("pages/product/product_smartscore.tpl.html") %>
-
-        <%= require("pages/solution/solution.tpl.html") %>
+        <%= htmlWebpackPlugin.options.file %>
     </div>
     <%= require("@/footer.tpl.html") %>
 </body>
