@@ -13,7 +13,7 @@
 <body class="<%= htmlWebpackPlugin.options.pageClass %>" style="display: none;">
     <%= require("@/header.tpl.html") %>
     <div class="page">
-        <%= htmlWebpackPlugin.options.file %>
+        <%= require("./route.js")(htmlWebpackPlugin.options.routepath) %>
     </div>
     <%= require("@/footer.tpl.html") %>
 </body>

@@ -27,7 +27,8 @@ module.exports = {
     devServer: {
         port,
         host: "0.0.0.0",
-        contentBase: resolve("static"),
+        contentBase: [resolve("static")],
+        watchContentBase: true,
         historyApiFallback: true,
         compress: true,
         hot: true,
@@ -51,6 +52,10 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.js$/,
+                use: ["babel-loader"]
+            },
+            {
                 enforce: "pre",
                 test: /\.js$/,
                 exclude: /node_modules/,
@@ -58,10 +63,6 @@ module.exports = {
                 options: {
                     failOnError: true
                 }
-            },
-            {
-                test: /\.js$/,
-                use: ["babel-loader"]
             },
             // {
             //     test: /\.ejs$/,
@@ -130,16 +131,18 @@ module.exports = {
                 to: resolve("dist")
             }
         ]),
-        new CleanWebpackPlugin(),
+        isProduction && new CleanWebpackPlugin(),
         ...routes.map(route => {
             let pathname = path.dirname(route.path).replace(resolve("src/pages"), "")
             let pageClass = pathname.replace("/", "") || "index"
+            let filename = path.basename(route.path).replace(".tpl", "")
+            let routepath = route.path.replace(resolve("src/pages"), ".")
             return (
                 new HtmlWebpackPlugin({
                     template: resolve("src/layout.html"),
-                    filename: `.${pathname}/index.html`,
+                    filename: `.${pathname}/${filename}`,
                     pageClass,
-                    file: route.file,
+                    routepath,
                     chunks: ["app", "vendor.node_module", "runtime.app"],
                     base: "/",
                     name: "app",
